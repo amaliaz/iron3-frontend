@@ -30,6 +30,9 @@ const NavMain = (props) => {
             <li>
               <p onClick={toggleFormDisplay}>Add Item</p>
             </li>
+            <li>
+              <p onClick={toggleFormDisplay}>List Items</p>
+            </li>
             {/* <li>
               <NavLink to="/profile">
                 {context.user && context.user.name}

@@ -26,7 +26,7 @@ class App extends React.Component {
       <div >
         <NavMain toggleFormDisplay={this.toggleFormDisplay} />
         <Switch>
-          {/* <ProtectedRoute
+          <ProtectedRoute
             exact
             path="/"
             render={(historyProps) => (
@@ -36,7 +36,7 @@ class App extends React.Component {
                 handleFormClose={this.handleClose}
               />
             )}
-          /> */}
+          />
           {/* <ProtectedRoute
             exact
             path="/profile"
@@ -55,7 +55,11 @@ class App extends React.Component {
           /> */}
 
           {/* <Route exact path="/about" component={About} /> */}
-          <Route exact path="/home" component={Home} />
+          {/* <Route exact path="/" render={(historyProps) => (
+              <Home  {...historyProps}
+              displayForm={this.state.displayForm}
+              handleFormClose={this.handleClose} />)} /> */}
+
           <Route exact path="/signup" component={Signup} />
           <Route exact path="/signin" component={SignIn} />
           <Route path="*" component={NotFound} />

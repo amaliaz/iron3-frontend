@@ -1,13 +1,21 @@
-import React, { Component } from 'react'
+import React from "react";
+import apiHandler from "../api/apiHandler";
+import { withUser } from "../components/Auth/withUser";
+// import "./../styles/Home.css";
+import AppMap from './AppMap'
+class Home extends React.Component {
 
-export class Home extends Component {
-    render() {
-        return (
-            <div>
-                <h2>HOOOOOOME</h2>
-            </div>
-        )
-    }
+  state = {
+    selectedItem: null,
+    items: [],
+  };
+
+  render() {
+    const { user } = this.props.context;
+
+    return (
+        <AppMap/>
+    )}
 }
 
-export default Home
+export default withUser(Home);
