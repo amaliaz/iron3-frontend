@@ -1,9 +1,10 @@
-import React, { Component } from 'react'
-import apiHandler from "./../../api/apiHandler";
-import ReactMapGL, { Marker, Popup } from "react-map-gl";
+import { Marker, Popup } from "react-map-gl";
+import './../../styles/AppMap.css'
+import React from "react";
+import { Link } from "react-router-dom";
 
-const FormDisplayTrip = ({showPopup, trips, setShowPopup, viewport}) => {
 
+const FormDisplayTrip = ({showPopup, trips, setTrips, setShowPopup, viewport}) => {
 
         return (
             <div>
@@ -51,7 +52,15 @@ const FormDisplayTrip = ({showPopup, trips, setShowPopup, viewport}) => {
                           anchor="top" >
                           <div className="popup">
                             {/* READ ON FORM PLUS EDIT DELETE BUTTONS */}
-                            {trip.title}
+                            <img src={trip.image} alt="Trip"/>
+                            <h2>{trip.title}</h2>
+                            <p>Description: {trip.description}</p>
+                            <small>Start: {new Date(trip.startDate).toLocaleDateString()}</small>
+                            <small>Start: {new Date(trip.endDate).toLocaleDateString()}</small>
+                            <h3>City: {trip.city}</h3>
+                            <p>Transportation: {trip.transportation}</p>
+                            <p>Accomondation: {trip.accomondation}</p>
+                            <Link to="/edit">Edit</Link>
                           </div>
                         </Popup>
                       ) : null

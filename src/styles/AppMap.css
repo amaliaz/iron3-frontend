@@ -15,12 +15,12 @@
   }
   
   .popup {
-    width: 40vw;
+    width: 70vw;
     padding: 1rem;
   }
   
   .popup img {
-    height: 200px;
+    height:150px;
     width: auto;
     text-align: center;
     margin: 0 auto;
