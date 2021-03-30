@@ -1,6 +1,6 @@
 import React from "react";
-import apiHandler from "../api/apiHandler";
-import { withUser } from "../components/Auth/withUser";
+import apiHandler from "./../../api/apiHandler";
+import { withUser } from "./../Auth/withUser";
 // import "./../styles/Home.css";
 import AppMap from './AppMap'
 class Home extends React.Component {

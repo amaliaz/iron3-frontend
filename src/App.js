@@ -2,9 +2,9 @@ import "./App.css";
 import NavMain from "./components/NavMain";
 import React from "react";
 import { Switch, Route } from "react-router-dom";
-import SignIn from "./components/SignIn"
-import Signup from "./components/Signup"
-import Home from "./components/Home"
+import SignIn from "./components/Views/SignIn"
+import Signup from "./components/Views/Signup"
+import Home from "./components/Views/Home"
 import NotFound from "./components/NotFound"
 import ProtectedRoute from "./components/ProtectedRoute";
 
