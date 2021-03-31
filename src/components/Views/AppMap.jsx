@@ -1,5 +1,8 @@
-import React, { Component } from "react";
 import ReactMapGL, { Marker, Popup } from "react-map-gl";
+import 'mapbox-gl/dist/mapbox-gl.css';
+import mapboxgl from 'mapbox-gl';
+
+import React, { Component } from "react"
 import { useState, useEffect } from "react";
 import apiHandler from "./../../api/apiHandler";
 // import Pin from "./../../src/pin.png";
@@ -7,6 +10,8 @@ import "./../../styles/AppMap.css";
 import FormDisplayTrip from "./../Forms/FormDisplayTrip";
 import FormAddTrip from "./../Forms/FormAddTrip";
 
+// eslint-disable-next-line import/no-webpack-loader-syntax
+mapboxgl.workerClass = require('worker-loader!mapbox-gl/dist/mapbox-gl-csp-worker').default;
 function AppMap() {
   const [trips, setTrips] = useState([]);
   const [showPopup, setShowPopup] = useState({});
@@ -41,7 +46,7 @@ function AppMap() {
   return (
     <ReactMapGL
       {...viewport}
-      mapStyle="mapbox://styles/thecjreynolds/ck117fnjy0ff61cnsclwimyay"
+      mapStyle="mapbox://styles/amaliaflz/ckmxg2uv00ny717pdnv9ehhci"
       onViewportChange={setViewport}
       onDblClick={addMarkerPopUp}
     >
