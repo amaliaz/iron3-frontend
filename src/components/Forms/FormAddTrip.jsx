@@ -1,20 +1,25 @@
-
-import React, { useState } from 'react';
-import { useForm } from 'react-hook-form';
+import React, { useState } from "react";
+import { useForm } from "react-hook-form";
 import apiHandler from "./../../api/apiHandler";
+import { buildFormData } from "./../../utils";
 
 const FormAddTrip = ({ location, onClose }) => {
-  const [error, setError] = useState('');
+  const [error, setError] = useState("");
   const { register, handleSubmit } = useForm();
 
   const onSubmit = async (data) => {
-console.log(data);
+    console.log(data);
 
-const locationDB = {coordinates:[location.latitude, location.longitude]};
-data.location=locationDB;
-    try {
-        const fd = new FormData();
-        
+    const locationDB = { coordinates: [location.latitude, location.longitude] };
+    data.location = locationDB;
+
+    // const imageDB = {image: data.image[0].name};
+    // data.image = imageDB;
+try {
+    data.image = data.image[0].name;
+      const fd = new FormData();
+      buildFormData(fd, data);
+console.log('fomdata', fd);
 
       await apiHandler.addItem(data);
       onClose();
@@ -24,13 +29,28 @@ data.location=locationDB;
     }
   };
 
+//   string fileName = Path.GetFileName(image.FileName);
+//   using (FileStream stream = new FileStream(Path.Combine(uploadDir, fileName), FileMode.Create))
+//   {
+
+//       image.CopyTo(stream);
+//       model.ImagePath = fileName;
+
+//   }
+
+
   return (
-    <form   onSubmit={handleSubmit(onSubmit)} className="entry-form">
-      { error ? <h3 className="error">{error}</h3> : null}
+    <form onSubmit={handleSubmit(onSubmit)} className="entry-form">
+      {error ? <h3 className="error">{error}</h3> : null}
       <label htmlFor="title">Title</label>
       <input name="title" type="text" required ref={register} />
       <label htmlFor="description">Description</label>
-      <textarea name="description" type="text" rows={3} ref={register}></textarea>
+      <textarea
+        name="description"
+        type="text"
+        rows={3}
+        ref={register}
+      ></textarea>
       <label htmlFor="image">Image</label>
       <input name="image" type="file" ref={register} />
       <label htmlFor="accomondation">Accomondation</label>
