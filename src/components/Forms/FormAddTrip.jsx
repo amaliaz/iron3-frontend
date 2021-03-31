@@ -8,36 +8,25 @@ const FormAddTrip = ({ location, onClose }) => {
   const { register, handleSubmit } = useForm();
 
   const onSubmit = async (data) => {
-    console.log(data);
+    console.log(data.image[0]);
 
     const locationDB = { coordinates: [location.latitude, location.longitude] };
     data.location = locationDB;
 
-    // const imageDB = {image: data.image[0].name};
-    // data.image = imageDB;
-try {
-    data.image = data.image[0].name;
+    try {
+      data.image = data.image[0];
+      console.log(data);
       const fd = new FormData();
       buildFormData(fd, data);
-console.log('fomdata', fd);
+      console.log("fomdata", fd);
 
-      await apiHandler.addItem(data);
+      await apiHandler.addItem(fd);
       onClose();
     } catch (error) {
       console.error(error);
       setError(error.message);
     }
   };
-
-//   string fileName = Path.GetFileName(image.FileName);
-//   using (FileStream stream = new FileStream(Path.Combine(uploadDir, fileName), FileMode.Create))
-//   {
-
-//       image.CopyTo(stream);
-//       model.ImagePath = fileName;
-
-//   }
-
 
   return (
     <form onSubmit={handleSubmit(onSubmit)} className="entry-form">
