@@ -45,6 +45,7 @@ function AppMap() {
 
   return (
     <ReactMapGL
+    className="map"
       {...viewport}
       mapStyle="mapbox://styles/amaliaflz/ckmxg2uv00ny717pdnv9ehhci"
       onViewportChange={setViewport}

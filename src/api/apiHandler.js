@@ -64,7 +64,7 @@ const apiHandler = {
 
   removeItem(tripId) {
     return service
-      .delete(`/trips/${tripId}`)
+      .delete(`trips/${tripId}`)
       .then((res) => res.data)
       .catch(errorHandler);
   },

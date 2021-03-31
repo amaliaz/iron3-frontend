@@ -1,0 +1,29 @@
+
+*{
+    /* width: 100vh */
+}
+
+.trip-container{
+    background-color: white;
+    height: 100px;
+    margin: 10px;
+    border-radius: 10px;
+    display: flex;
+    flex-direction: row;
+    font-size: 12px;
+}
+.trip-container > div> img{
+  width: 100px;
+  margin-right: 10px
+}
+.trip-container > div {
+    display: flex;
+    padding: 10px;
+    width: 100%;
+}
+
+.buttonsList > button{
+    padding: 20px;
+    background-color: rgb(255, 255, 255);
+    box-shadow: thistle;
+}

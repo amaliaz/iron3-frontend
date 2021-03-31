@@ -1,7 +1,7 @@
 import React from "react";
-import { NavLink } from "react-router-dom";
 import { withUser } from "../components/Auth/withUser";
 import apiHandler from "../api/apiHandler";
+import { Link, Redirect, NavLink } from "react-router-dom";
 
 import "./../styles/NavMain.css";
 
@@ -31,7 +31,7 @@ const NavMain = (props) => {
               <p onClick={toggleFormDisplay}>Add Item</p>
             </li>
             <li>
-              <p onClick={toggleFormDisplay}>List Items</p>
+              <Link to="/list">List Items</Link>
             </li>
             {/* <li>
               <NavLink to="/profile">

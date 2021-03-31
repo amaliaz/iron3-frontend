@@ -2,10 +2,12 @@ import "./App.css";
 import NavMain from "./components/NavMain";
 import React from "react";
 import { Switch, Route } from "react-router-dom";
-import SignIn from "./components/Views/SignIn"
-import Signup from "./components/Views/Signup"
-import Home from "./components/Views/Home"
-import NotFound from "./components/NotFound"
+import SignIn from "./components/Views/SignIn";
+import Signup from "./components/Views/Signup";
+import Home from "./components/Views/Home";
+import FormUpdate from "./components/Forms/FormUpdate";
+import List from "./components/Views/List"
+import NotFound from "./components/NotFound";
 import ProtectedRoute from "./components/ProtectedRoute";
 
 class App extends React.Component {
@@ -31,6 +33,28 @@ class App extends React.Component {
             path="/"
             render={(historyProps) => (
               <Home
+                {...historyProps}
+                displayForm={this.state.displayForm}
+                handleFormClose={this.handleClose}
+              />
+            )}
+          />
+          <ProtectedRoute
+            exact
+            path="/list"
+            render={(historyProps) => (
+              <List
+                {...historyProps}
+                displayForm={this.state.displayForm}
+                handleFormClose={this.handleClose}
+              />
+            )}
+          />
+          <ProtectedRoute
+            exact
+            path="/list/edit"
+            render={(historyProps) => (
+              <FormUpdate
                 {...historyProps}
                 displayForm={this.state.displayForm}
                 handleFormClose={this.handleClose}
