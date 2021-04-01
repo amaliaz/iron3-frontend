@@ -71,7 +71,7 @@ const apiHandler = {
 
   updateItem(tripId, data) {
     return service
-      .patch(`/items/${tripId}`, data)
+      .patch(`/trips/${tripId}`, data)
       .then((res) => res.data)
       .catch(errorHandler);
   },

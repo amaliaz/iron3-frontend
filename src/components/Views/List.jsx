@@ -44,7 +44,7 @@ function List() {
                   <span>{trip.endDate}</span>
                 </p>
               </div>
-              <div className="buttonsList"><Link to="/list/edit">Edit</Link>
+              <div className="buttonsList"><Link to={`/list/edit/${trip._id}`}>Edit</Link>
               <button onClick={() => handleDelete(trip._id)}>Delete</button></div>
             </div>
           </div>

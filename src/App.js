@@ -52,7 +52,7 @@ class App extends React.Component {
           />
           <ProtectedRoute
             exact
-            path="/list/edit"
+            path="/list/edit/:id"
             render={(historyProps) => (
               <FormUpdate
                 {...historyProps}
