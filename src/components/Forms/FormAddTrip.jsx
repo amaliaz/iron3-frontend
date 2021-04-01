@@ -8,17 +8,13 @@ const FormAddTrip = ({ location, onClose }) => {
   const { register, handleSubmit } = useForm();
 
   const onSubmit = async (data) => {
-    console.log(data.image[0]);
-
     const locationDB = { coordinates: [location.latitude, location.longitude] };
     data.location = locationDB;
 
     try {
       data.image = data.image[0];
-      console.log(data);
       const fd = new FormData();
       buildFormData(fd, data);
-      console.log("fomdata", fd);
 
       await apiHandler.addItem(fd);
       onClose();
@@ -56,39 +52,3 @@ const FormAddTrip = ({ location, onClose }) => {
 };
 
 export default FormAddTrip;
-// <form
-//                 ref={this.formRef}
-//                 onSubmit={this.handleSubmit}
-//                 className="entry-form"
-//               >
-//                 <label htmlFor="title">Title</label>
-//                 <input
-//                   name="title"
-//                   value={this.state.title}
-//                   onChange={this.handleChange}
-//                 />
-//                 <label htmlFor="description">Description</label>
-//                 <input
-//                   name="description"
-//                   value={this.state.description}
-//                   onChange={this.handleChange}
-//                 />
-//                 <label htmlFor="image">Image</label>
-//                 <input name="image" type="file" />
-//                 <label htmlFor="startDate">Start Date</label>
-//                 <input
-//                   name="startDate"
-//                   type="date"
-//                   value={this.state.startDate}
-//                   onChange={this.handleChange}
-//                 ></input>
-//                 <label htmlFor="endDate">End Date</label>
-//                 <input
-//                   name="endDate"
-//                   type="date"
-//                   value={this.state.endDate}
-//                   onChange={this.handleChange}
-//                 />
-//                 <button>ADD
-//                 </button>
-//               </form>

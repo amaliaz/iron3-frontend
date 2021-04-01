@@ -24,27 +24,6 @@ function List() {
     getAllTrips();
   }, []);
 
-
-//   const handleDelete = (tripId) => {
-//     // setSelectedTrips({
-//     //     selectedTrips: selectedTrips.filter(
-//     //         (c, i) => c.id !== tripId
-//     //       ),
-//     //     });
-//         console.log(tripId);
-//   };
-
-
-//   const handleDelete = async (event) => {
-//     try {
-//        const id= event.target.id;
-//       await apiHandler.removeItem(id);
-//     //   onClose();
-//     } catch (error) {
-//       console.error(error);
-//     }
-//   };
-
   const handleDelete = async (itemId ) => {
         const tripToRemove = await apiHandler.removeItem(itemId);
         const userTrips = [...trips].filter((item) => item._id !== itemId);
