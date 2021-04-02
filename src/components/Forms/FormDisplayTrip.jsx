@@ -1,5 +1,4 @@
 import { Marker, Popup } from "react-map-gl";
-import './../../styles/AppMap.css'
 import React from "react";
 import { Link } from "react-router-dom";
 import "./../../styles/AppMap.css";

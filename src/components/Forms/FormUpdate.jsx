@@ -25,10 +25,8 @@ function FormUpdate() {
             [name]: value
         })
     }
-
     const onSubmit = async (data) => {
       let id = window.location.pathname.replace("/list/edit/","")
-
         try {
           const fd = new FormData();
           buildFormData(fd, stateValues);
@@ -42,15 +40,14 @@ function FormUpdate() {
       };
 
       useEffect(() => {
-       
       }, []);
 
     return (
-
-        <form onSubmit={handleSubmit(onSubmit)}  onChange={handleChange} className="entry-form">
+<div className="popup">
+        <form onSubmit={handleSubmit(onSubmit)}  onChange={handleChange} className="addTripForm">
       {error ? <h3 className="error">{error}</h3> : null}
       <label htmlFor="title">Title</label>
-      <input name="title" type="text"  ref={register} value={stateValues.title}   />
+      <input name="title"  type="text"  ref={register} value={stateValues.title}   />
       <label htmlFor="description">Description</label>
       <textarea
         name="description"
@@ -68,8 +65,9 @@ function FormUpdate() {
       <input name="startDate"  ref={register} type="date"   />
       <label htmlFor="endDate">End Date</label>
       <input name="endDate"  ref={register} type="date"   />
-      <button>ADD</button>
+      <button>UPDATE</button>
     </form>
+    </div>
     )
 }
 

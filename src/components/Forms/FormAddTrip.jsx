@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import { useForm } from "react-hook-form";
 import apiHandler from "./../../api/apiHandler";
 import { buildFormData } from "./../../utils";
-import "./../../styles/AppMap.css";
+import "./../../styles/FormUpdate.css";
 
 const FormAddTrip = ({ location, onClose }) => {
   const [error, setError] = useState("");
