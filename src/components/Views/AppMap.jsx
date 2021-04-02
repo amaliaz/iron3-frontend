@@ -1,11 +1,9 @@
 import ReactMapGL, { Marker, Popup } from "react-map-gl";
 import 'mapbox-gl/dist/mapbox-gl.css';
 import mapboxgl from 'mapbox-gl';
-
 import React, { Component } from "react"
 import { useState, useEffect } from "react";
 import apiHandler from "./../../api/apiHandler";
-// import Pin from "./../../src/pin.png";
 import "./../../styles/AppMap.css";
 import FormDisplayTrip from "./../Forms/FormDisplayTrip";
 import FormAddTrip from "./../Forms/FormAddTrip";

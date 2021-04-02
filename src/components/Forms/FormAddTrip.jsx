@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import { useForm } from "react-hook-form";
 import apiHandler from "./../../api/apiHandler";
 import { buildFormData } from "./../../utils";
+import "./../../styles/AppMap.css";
 
 const FormAddTrip = ({ location, onClose }) => {
   const [error, setError] = useState("");
@@ -25,7 +26,7 @@ const FormAddTrip = ({ location, onClose }) => {
   };
 
   return (
-    <form onSubmit={handleSubmit(onSubmit)} className="entry-form">
+    <form onSubmit={handleSubmit(onSubmit)} className="addTripForm">
       {error ? <h3 className="error">{error}</h3> : null}
       <label htmlFor="title">Title</label>
       <input name="title" type="text" required ref={register} />
@@ -38,14 +39,16 @@ const FormAddTrip = ({ location, onClose }) => {
       ></textarea>
       <label htmlFor="image">Image</label>
       <input name="image" type="file" ref={register} />
+      <label htmlFor="city">City</label>
+      <input name="city" type="text" required ref={register} />
       <label htmlFor="accomondation">Accomondation</label>
       <input name="accomondation" type="text" required ref={register} />
       <label htmlFor="transportation">Transportation</label>
       <input name="transportation" type="text" required ref={register} />
       <label htmlFor="startDate">Start Date</label>
-      <input name="startDate" type="date" required ref={register} />
+      <input name="startDate" type="date" ref={register} />
       <label htmlFor="endDate">End Date</label>
-      <input name="endDate" type="date" required ref={register} />
+      <input name="endDate" type="date" ref={register} />
       <button>ADD</button>
     </form>
   );

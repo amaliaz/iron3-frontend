@@ -34,7 +34,7 @@ class FormSignup extends Component {
       <div className="wrapper">
         <header className="section header">
           <div className="header__text">
-            <h1>sup.</h1>
+            <h1>Start your travel</h1>
             <p>Create an Account</p>
           </div>
         </header>
@@ -82,9 +82,6 @@ class FormSignup extends Component {
               placeholder="Password"
               
             />
-            {/* <div className="fileUpload">
-            <div className="uploader"> */}
-            {/* <p>Profile Image</p> */}
             <input
               onChange={this.handleChange}
               value={this.state.profileImg}
@@ -95,9 +92,6 @@ class FormSignup extends Component {
               placeholder="Profile Image"
               multiple
             />
-            {/* </div>
-            <button className="uploadFiles">Upload</button>
-            </div> */}
             <button className="btn-submit">Sign up</button>
             <Link to="/signin" className="opposite-btn1">Already a Member?</Link>
           </form>

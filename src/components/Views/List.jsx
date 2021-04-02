@@ -40,11 +40,11 @@ function List() {
               <div>
                 <h2>{trip.title}</h2>
                 <p>
-                  <span>{trip.startDate}</span>
-                  <span>{trip.endDate}</span>
+                  <span>Start: {new Date(trip.startDate).toLocaleDateString()}</span><span>  </span>
+                  <span>End: {new Date(trip.endDate).toLocaleDateString()}</span>
                 </p>
               </div>
-              <div className="buttonsList"><Link to={`/list/edit/${trip._id}`}>Edit</Link>
+              <div className="buttonsList"><Link className="linkButton" to={`/list/edit/${trip._id}`}>Edit</Link>
               <button onClick={() => handleDelete(trip._id)}>Delete</button></div>
             </div>
           </div>

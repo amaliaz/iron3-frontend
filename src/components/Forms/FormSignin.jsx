@@ -37,6 +37,7 @@ class FormSignin extends Component {
 
     return (
       <div className="wrapper">
+        <div className="formSignin">
         <header className="section header">
 
           <div className="header__text">
@@ -74,6 +75,7 @@ class FormSignin extends Component {
             <Link to="/signup" className="opposite-btn1">Don't have an account?</Link>
           </form>
         </div>
+      </div>
       </div>
     );
   }

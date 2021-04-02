@@ -2,7 +2,6 @@ import React from "react";
 import { withUser } from "../components/Auth/withUser";
 import apiHandler from "../api/apiHandler";
 import { Link, Redirect, NavLink } from "react-router-dom";
-
 import "./../styles/NavMain.css";
 
 const NavMain = (props) => {
@@ -22,16 +21,13 @@ const NavMain = (props) => {
   return (
     <nav className="NavMain">
       <NavLink exact to="/">
-        <h3 className="logo">Travel</h3>
+        <h3 className="logo"><img src="/earth-globe.png" alt=""/></h3>
       </NavLink>
       <ul className="nav-list">
         {context.isLoggedIn && (
           <React.Fragment>
             <li>
-              <p onClick={toggleFormDisplay}>Add Item</p>
-            </li>
-            <li>
-              <Link to="/list">List Items</Link>
+              <Link className="navlink" to="/list">List Items</Link>
             </li>
             {/* <li>
               <NavLink to="/profile">

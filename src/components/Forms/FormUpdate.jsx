@@ -3,6 +3,7 @@ import { useForm } from "react-hook-form";
 import { Redirect } from "react-router-dom";
 import { buildFormData } from "./../../utils";
 import apiHandler from "./../../api/apiHandler";
+import "./../../styles/AppMap.css";
 
 function FormUpdate() {
   const [trips, setTrips] = useState([]);

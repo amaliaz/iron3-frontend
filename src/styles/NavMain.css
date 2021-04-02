@@ -1,16 +1,17 @@
 .NavMain {
   background-color: transparent;
-  color: rgb(255, 255, 255);
+  color: rgb(0, 0, 0);
   display: flex;
   align-items: center;
   padding: 20px;
   height: 70px;
 }
-.logo{
+.logo > img{
   color: white;
+  width: 50px
 }
 .navlink{
-  color: white;
+  color: rgb(0, 0, 0);
 }
 a{
   text-decoration: none;
@@ -18,7 +19,7 @@ a{
 .NavMain .nav-list {
   margin-left: auto;
   display: flex;
-  color: white;
+  color: rgb(0, 0, 0);
   list-style-type: none;
 }
 

@@ -2,6 +2,7 @@ import { Marker, Popup } from "react-map-gl";
 import './../../styles/AppMap.css'
 import React from "react";
 import { Link } from "react-router-dom";
+import "./../../styles/AppMap.css";
 
 
 const FormDisplayTrip = ({showPopup, trips, setTrips, setShowPopup, viewport}) => {
@@ -55,12 +56,12 @@ const FormDisplayTrip = ({showPopup, trips, setTrips, setShowPopup, viewport}) =
                             <img src={trip.image} alt="Trip"/>
                             <h2>{trip.title}</h2>
                             <p>Description: {trip.description}</p>
-                            <small>Start: {new Date(trip.startDate).toLocaleDateString()}</small>
-                            <small>Start: {new Date(trip.endDate).toLocaleDateString()}</small>
+                            <small>Start: {new Date(trip.startDate).toLocaleDateString()}</small> <br></br> 
+                            <small>End: {new Date(trip.endDate).toLocaleDateString()}</small>
                             <h3>City: {trip.city}</h3>
                             <p>Transportation: {trip.transportation}</p>
                             <p>Accomondation: {trip.accomondation}</p>
-                            <Link to="/edit">Edit</Link>
+                            <Link to={`/list/edit/${trip._id}`}>Edit</Link>
                           </div>
                         </Popup>
                       ) : null
